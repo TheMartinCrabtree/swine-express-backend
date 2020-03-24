@@ -31,6 +31,22 @@ createCharacter=(req, res)=>{
     }
 }
 
+getCharacters=async(req, res)=>{
+    await Character.find({}, (error, characters)=>{
+        if(error){
+            return handleError(400, error);
+        }
+        else if(!characters.length){
+            return handleError(404, "Character was not found.");
+        }
+        else{
+            return res.status(200).jon({ success: true, data: characters });
+        }
+    })
+    .catch((error)=>console.log("issue with getCharacters", error));
+}
+
 module.exports = {
     createCharacter,
+    getCharacters,
 };
