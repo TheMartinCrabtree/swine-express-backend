@@ -5,6 +5,7 @@ mongoose
         useUnifiedTopology: true,
         useNewUrlParser: true,
      })
+    .then(()=>console.log("Database Connected."))
     .catch((error)=>{
         console.error('Database Connection Error', error.message);
     });
