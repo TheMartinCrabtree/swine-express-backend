@@ -3,7 +3,7 @@ const CharacterCtrl = require("../controllers/character-ctrl");
 
 const router = express.Router();
 
-router.get('/characters', );
+router.get('/characters', CharacterCtrl.getCharacters);
 // router.get('/character/:id', );
 router.post('/character', CharacterCtrl.createCharacter);
 // router.put('/character/:id', );
